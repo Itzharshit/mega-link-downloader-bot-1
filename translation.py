@@ -6,7 +6,7 @@ else:
     from config import Config
 
 class Translation(object):
-    START_TEXT = f"""Hii,\n
+    START_TEXT = f"""Hii,
 I am Mega.nz Downloader bot!
 Just send me any mega.nz File link, I will return you that file on telegram"""
     
