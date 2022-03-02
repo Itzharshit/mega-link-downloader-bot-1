@@ -65,7 +65,7 @@ async def megadl(bot, update):
         if "folder" not in url or "#F" not in url or "#N" not in url:
             usermsg = await bot.send_message(
                 chat_id=update.chat.id,
-                text=f"""<b>Processing...⏳</b>""",
+                text=f"""⏳""",
                 reply_to_message_id=update.message_id
             )
             description = ""
@@ -79,11 +79,9 @@ async def megadl(bot, update):
             s = None
             y = None
             tg_send_type = None
-            error_text = f"""Sorry some error occured!
+            error_text = f"""Oops! something went wrong!
 
-    Make sure your link is <b>Valid (not expired or been removed)</b>
-
-    Make sure your link is <b>not password protected or encrypted or private</b>"""
+    Please report in support group!"""
             try:
                 linkinfo = m.get_public_url_info(url)
                 logger.info(linkinfo)
@@ -165,7 +163,7 @@ async def megadl(bot, update):
                             try:
                                 await bot.edit_message_text(
                                     chat_id=update.chat.id,
-                                    text="<b>Detected Size</b> : " + humanbytes(file_size) + "\n" + "\n" + "<i>Splitting files...</i>\n\n<code>The downloaded file is bigger than 2GB! But due to telegram API limits I can't upload files which are bigger than 2GB 🥺. So I will split the files and upload them to you. 😇</code>",
+                                    text="<b>File Size</b> : " + humanbytes(file_size) + "\n" + "\n" + "<i>Splitting files...</i>\n\nThis file is more than 2GB, due to telegram API limitations I am unable to upload files that are greater than 2GB.Now I am trying to split files",
                                     message_id=usermsg.message_id
                                 )
                                 splitting_size = 2040108421
@@ -206,7 +204,7 @@ async def megadl(bot, update):
                                         pass
                             except:
                                 await bot.edit_message_text(
-                                    text="sorry some error occurred!",
+                                    text="❌ Oops! An error occurred!",
                                     chat_id=update.chat.id,
                                     message_id=usermsg.message_id
                                 )
@@ -263,13 +261,13 @@ async def megadl(bot, update):
         else:
             await bot.send_message(
                 chat_id=update.chat.id,
-                text=f"""Sorry! Folder links are not supported!""",
+                text=f"""Folders are not supported yet!""",
                 reply_to_message_id=update.message_id
             )
     else:
         await bot.send_message(
             chat_id=update.chat.id,
-            text=f"""<b>I am a mega.nz link downloader bot! 😑</b>\n\nThis not a mega.nz link. 😡""",
+            text=f"""🚫 Please send mega.nz link only""",
             reply_to_message_id=update.message_id
         )
 
