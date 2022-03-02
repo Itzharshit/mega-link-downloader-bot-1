@@ -41,6 +41,6 @@ async def megadl(bot, update):
     else:
         await bot.send_message(
             chat_id=update.chat.id,
-            text=f"""This command is only for the owner and auth users of this bot!""",
+            text=f"""Who the hell are you??""",
             reply_to_message_id=update.message_id
         )
