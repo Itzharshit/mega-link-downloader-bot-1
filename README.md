@@ -43,7 +43,7 @@ Please be kind to star and fork this repo!✨😇
 
 <br>
   
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy/https://github.com/Itzharshit/mega-link-downloader-bot-1/)
 </details>
 
 <details>
