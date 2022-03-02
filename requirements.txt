@@ -13,4 +13,4 @@ redis
 psycopg2-binary
 feedparser
 filesplit
-git+https://github.com/itzharshit/mega.py
+git+https://github.com/XMYSTERlOUSX/mega.py
